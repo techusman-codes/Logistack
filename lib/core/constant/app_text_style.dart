@@ -8,10 +8,11 @@ class AppTextStyles {
     color: AppColors.primary,
   );
 
-  static final subHeading = TextStyle(
-    fontSize: 18,
+  static const subHeading = TextStyle(
+    fontSize: 22,
     fontWeight: FontWeight.w500,
     color: AppColors.textPrimary,
+    letterSpacing: 1.0,
   );
 
   static final body = TextStyle(fontSize: 16, color: AppColors.textSecondary);

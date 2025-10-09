@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:logistics_app/features/splash/login/login_screen.dart';
-// import 'package:logistics_app/features/splash/presentation/screens/splash_screen.dart';
+import 'package:logistics_app/features/splash/presentation/screens/forget_password.dart';
+import 'package:logistics_app/features/splash/presentation/screens/splash_screen.dart';
+import 'package:logistics_app/features/splash/signup/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +16,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Logistack',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const LoginScreen(),
+      initialRoute: '/splash_screen',
+      routes: {
+        '/splash_screen': (context) => const SplashScreen(),
+        '/login_screen': (context) => const LoginScreen(),
+        '/forget_password': (context) => const ForgetPassword(),
+        '/sign_up_screen': (context) => const SignupScreen(),
+      },
     );
   }
 }
