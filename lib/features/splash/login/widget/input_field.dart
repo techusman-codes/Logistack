@@ -13,7 +13,8 @@ class CustomInputField extends StatefulWidget {
     required this.hint,
     required this.icon,
     this.obscureText = false,
-    this.keyboardType = TextInputType.text,
+    // ignore: non_constant_identifier_names
+    this.keyboardType = TextInputType.text, required TextEditingController Controller,
   });
 
   @override
@@ -34,7 +35,6 @@ class _CustomInputFieldState extends State<CustomInputField> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-       
         TextField(
           keyboardType: widget.keyboardType,
           obscureText: _obscure,
@@ -99,5 +99,3 @@ class _CustomInputFieldState extends State<CustomInputField> {
     );
   }
 }
-
-

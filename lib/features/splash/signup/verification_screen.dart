@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:logistics_app/core/constant/app_assets.dart';
-import 'package:logistics_app/core/constant/app_colors.dart';
-import 'package:logistics_app/core/constant/app_text.dart';
-import 'package:logistics_app/core/constant/app_text_style.dart';
-import 'package:logistics_app/features/splash/login/widget/input_field.dart';
 
-class ForgetPassword extends StatefulWidget {
-  const ForgetPassword({super.key});
+import 'package:logistics_app/core/constant/app_colors.dart';
+
+import 'package:logistics_app/core/constant/app_text_style.dart';
+
+class VerificationScreen extends StatefulWidget {
+  const VerificationScreen({super.key});
 
   @override
-  State<ForgetPassword> createState() => _ForgetPasswordState();
+  State<VerificationScreen> createState() => _VerificationScreenState();
 }
 
-class _ForgetPasswordState extends State<ForgetPassword> {
+class _VerificationScreenState extends State<VerificationScreen> {
   final _passwordController = TextEditingController();
   @override
   void dispose() {
@@ -40,53 +39,69 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             },
           ),
         ),
+
         title: const Text(
-          'Forget Password',
+          'Verification',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
+
       body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 20),
-              Image.asset(AppAssets.appIcon),
-              Text(
-                AppTexts.appName,
-                style: TextStyle(
-                  color: AppColors.black,
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
-                  decoration: TextDecoration.none,
-                ),
-              ),
               SizedBox(height: 40),
               Text(
-                'Forget Password',
-                style: AppTextStyles.subHeading.copyWith(fontSize: 20),
+                'Verify your account',
+                style: AppTextStyles.subHeading.copyWith(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Center(
                 child: Text(
-                  'please enter your email address. you will \n receive a link to create new password \n via email.',
+                  'we have sent you 4 digit code to your phone',
                   textAlign: TextAlign.center,
                   style: AppTextStyles.subHeading.copyWith(
-                    fontSize: 14,
+                    fontSize: 16,
                     color: const Color.fromARGB(255, 69, 68, 68),
                   ),
                 ),
               ),
-
-              SizedBox(height: 30),
-              // emaail and password fields
-              CustomInputField(
-                hint: "email2",
-                icon: Icons.close,
-                keyboardType: TextInputType.emailAddress,
-                Controller: _passwordController,
+              SizedBox(height: 50),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: List.generate(4, (index) {
+                  return SizedBox(
+                    width: 60,
+                    child: TextField(
+                      keyboardType: TextInputType.number,
+                      textAlign: TextAlign.center,
+                      maxLength: 1,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      decoration: InputDecoration(
+                        counterText: "",
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: AppColors.lightGrey),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: AppColors.success,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      ),
+                    ),
+                  );
+                }),
               ),
               SizedBox(height: 30),
               SizedBox(
@@ -103,7 +118,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  child: Text("SEND", style: AppTextStyles.button),
+                  child: Text("Verify", style: AppTextStyles.button),
                 ),
               ),
 

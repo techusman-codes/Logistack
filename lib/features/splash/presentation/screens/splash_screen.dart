@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logistics_app/core/constant/app_assets.dart';
 import 'package:logistics_app/core/constant/app_colors.dart';
 import 'package:logistics_app/core/constant/app_text.dart';
-import 'package:logistics_app/features/splash/login/login_screen.dart';
+import 'package:logistics_app/features/splash/signup/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

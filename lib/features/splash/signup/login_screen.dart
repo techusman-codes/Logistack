@@ -14,7 +14,19 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  // final_formKey = GlobalKey<FormState>();
+
+   final _passwordController = TextEditingController();
+   final _phoneController = TextEditingController();
   @override
+  void dispose() {
+    // Dispose controllers
+    
+    _passwordController.dispose();
+
+  
+    super.dispose();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -61,12 +73,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 hint: "Mobile Number",
                 icon: Icons.check,
                 keyboardType: TextInputType.emailAddress,
+                Controller: _phoneController,
               ),
               SizedBox(height: 10),
               CustomInputField(
                 hint: "password",
                 icon: Icons.password,
                 keyboardType: TextInputType.visiblePassword,
+                Controller: _passwordController,
               ),
 
               // Forget Passsword
@@ -91,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.danger,
+                    backgroundColor: const Color.fromARGB(255, 246, 47, 12),
                     padding: const EdgeInsets.symmetric(vertical: 15),
 
                     shape: RoundedRectangleBorder(
@@ -141,14 +155,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: [
                     Text(
                       "Don't have an account?",
-                      style: AppTextStyles.body.copyWith(
-                        color: AppColors.black,
-                      ),
+                      style: AppTextStyles.body.copyWith(color: AppColors.grey),
                     ),
                     const SizedBox(width: 6),
                     const Icon(
                       Icons.arrow_forward,
-                      color: Colors.black,
+                      color: Colors.grey,
                       size: 18,
                     ),
                   ],
