@@ -4,6 +4,7 @@ class AppAssets {
   static const String background = "assets/images/bg1.jpeg";
   static const String logo = "assets/images/bg2.jpg";
   static const String appIcon = "assets/icons/icon1.png";
+  static const String profilepic = "assets/images/ucee.jpeg";
 
   // Illustrations
   static const String onboarding1 = "assets/images/onboarding_1.png";

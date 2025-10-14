@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logistics_app/features/splash/presentation/screens/start_screen.dart';
 import 'package:logistics_app/features/splash/signup/login_screen.dart';
 import 'package:logistics_app/features/splash/presentation/screens/forget_password.dart';
 import 'package:logistics_app/features/splash/presentation/screens/splash_screen.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/forget_password': (context) => const ForgetPassword(),
         '/sign_up_screen': (context) => const SignupScreen(),
         '/verification_screen': (context) => const VerificationScreen(),
+        '/start_screen': (context) => const StartScreen(),
       },
     );
   }

@@ -16,17 +16,17 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   // final_formKey = GlobalKey<FormState>();
 
-   final _passwordController = TextEditingController();
-   final _phoneController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _phoneController = TextEditingController();
   @override
   void dispose() {
     // Dispose controllers
-    
+
     _passwordController.dispose();
 
-  
     super.dispose();
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -103,7 +103,9 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/start_screen');
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 246, 47, 12),
                     padding: const EdgeInsets.symmetric(vertical: 15),
