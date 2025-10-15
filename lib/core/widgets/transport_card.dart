@@ -6,7 +6,8 @@ class TransportCard extends StatelessWidget {
   final String title;
   final String assetPath; // image asset path (png or svg)
   final VoidCallback? onTap;
-  final VoidCallback? onAction; // action button callback
+  final VoidCallback? onAction;
+  final bool isSelected; // action button callback
 
   const TransportCard({
     super.key,
@@ -14,6 +15,7 @@ class TransportCard extends StatelessWidget {
     required this.assetPath,
     this.onTap,
     this.onAction,
+    this.isSelected = false,
   });
 
   @override
@@ -42,10 +44,8 @@ class TransportCard extends StatelessWidget {
             children: [
               // Title at top-left
               Text(title, style: AppTextStyles.body.copyWith(fontSize: 14)),
-
               // Space between title and main content
               const Spacer(),
-
               // Row: image on left, action button on the right
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +62,6 @@ class TransportCard extends StatelessWidget {
                   ),
 
                   const Spacer(),
-
                   // Circular action button
                   GestureDetector(
                     onTap: onAction,

@@ -15,6 +15,9 @@ class StartScreen extends StatefulWidget {
 }
 
 class _StartScreenState extends State<StartScreen> {
+  // Transport card selection
+  int? selectedTransportIndex;
+
   final data = [
     {'title': 'Delivery man', 'asset': 'assets/images/deliveryman.jpg'},
     {'title': 'Truck', 'asset': 'assets/images/truck.jpg'},
@@ -275,15 +278,19 @@ class _StartScreenState extends State<StartScreen> {
                             mainAxisSpacing: 12,
                             childAspectRatio:
                                 1.1, // match TransportCard aspectRatio
-                            children: data.map((item) {
+                            children: List.generate(data.length, (index) {
                               return TransportCard(
-                                title: item['title']!,
-                                assetPath: item['asset']!,
-                                onTap: () => print('tapped ${item['title']}'),
-                                onAction: () =>
-                                    print('action ${item['title']}'),
+                                title: data[index]['title']!,
+                                assetPath: data[index]['asset']!,
+                                isSelected: selectedTransportIndex == index,
+                                onTap: () {
+                                  setState(() {
+                                    selectedTransportIndex = index;
+                                  });
+                                },
+                                onAction: () => print ('action${data[index]['title']}')
                               );
-                            }).toList(),
+                            }),
                           );
                         },
                       ),
