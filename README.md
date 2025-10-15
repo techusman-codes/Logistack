@@ -12,9 +12,9 @@
 
 ## 🔗 Live Demo
 
-> **Live Demo:** *Replace the URL below with your deployed demo URL*
 
-[Live Demo (Web)](https://your-live-demo-url.example.com)
+
+![App Screenshot](https://github.com/techusman-codes/Logistack/blob/699348a964747b4bc030a00aef630300d0bc3ba3/Screenshot%20From%202025-10-14%2020-46-18.png)
 
 ---
 
