@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logistics_app/features/splash/presentation/screens/place_order.dart';
 import 'package:logistics_app/features/splash/presentation/screens/start_screen.dart';
 import 'package:logistics_app/features/splash/signup/login_screen.dart';
 import 'package:logistics_app/features/splash/presentation/screens/forget_password.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/sign_up_screen': (context) => const SignupScreen(),
         '/verification_screen': (context) => const VerificationScreen(),
         '/start_screen': (context) => const StartScreen(),
+        '/place_order': (context) => const PlaceOrderScreen(),
       },
     );
   }

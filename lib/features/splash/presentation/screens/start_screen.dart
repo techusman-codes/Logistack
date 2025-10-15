@@ -309,7 +309,7 @@ class _StartScreenState extends State<StartScreen> {
           if (index == 0) {
             Navigator.pushReplacementNamed(context, '/start_screen');
           } else if (index == 1) {
-            Navigator.pushReplacementNamed(context, '/tracking');
+            Navigator.pushReplacementNamed(context, '/place_order');
           } else if (index == 2) {
             Navigator.pushReplacementNamed(context, '/routeName');
           }
